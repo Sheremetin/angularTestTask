@@ -1,0 +1,22 @@
+doctype html
+html(lang='en', ng-app='CounterApp')
+  head
+    meta(charset='UTF-8')
+    title Title
+  body
+    div(ng-app='CounterApp')
+      div(ng-controller='CounterController')
+        | {{counter}}
+        button(ng-click='toggleCounter()') {{working ? 'Stop':'Start'}}
+        button(ng-click='resetCounter()') Reset
+        button(ng-click='splitCounter()') Split
+        br
+        br
+        br
+        | Stop: {{current}}
+        br
+        br
+        br
+        | Split: {{showSplitCounter}}
+    script(src='js/vendor.min.js')
+    script(src='js/all.min.js')
