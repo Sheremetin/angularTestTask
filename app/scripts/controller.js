@@ -8,6 +8,10 @@ app.controller('CounterController', ['$scope', '$timeout', function ($scope, $ti
     $scope.counter = 0;
     $scope.working = 1;
 
+    /**
+     * stop counter 
+     */
+
     var stopCounter = function () {
         $timeout.cancel(timer);
         timer = null;
@@ -18,6 +22,10 @@ app.controller('CounterController', ['$scope', '$timeout', function ($scope, $ti
         console.log(current)
     };
 
+    /**
+     * start counter
+     */
+
     var startCounter = function () {
 
         if (timer === null) {
@@ -27,6 +35,10 @@ app.controller('CounterController', ['$scope', '$timeout', function ($scope, $ti
         $scope.working = 1;
     };
 
+    /**
+     * start/stop counter trigger
+     */
+
     $scope.toggleCounter = function () {
         if ($scope.working) {
             stopCounter();
@@ -34,6 +46,10 @@ app.controller('CounterController', ['$scope', '$timeout', function ($scope, $ti
             startCounter();
         }
     };
+
+    /**
+     * reset counter
+     */
 
     $scope.resetCounter = function () {
         $timeout.cancel(timer);
@@ -49,6 +65,10 @@ app.controller('CounterController', ['$scope', '$timeout', function ($scope, $ti
 
     $scope.splitData = [];
 
+    /**
+     * split counter
+     */
+
     $scope.splitCounter = function () {
         splitCurrent = $scope.counter;
         $scope.splitCurrent = splitCurrent;
@@ -59,6 +79,10 @@ app.controller('CounterController', ['$scope', '$timeout', function ($scope, $ti
 
         $scope.showSplitCounter = $scope.splitData.join(', ');
     };
+
+    /**
+     * counter
+     */
 
     var updateCounter = function () {
         $scope.counter++;
